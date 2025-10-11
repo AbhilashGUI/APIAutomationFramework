@@ -5,10 +5,11 @@ import org.testng.annotations.Test;
 
 public class LoginwithDDT {
     @Test(dataProvider = "getData", dataProviderClass = UtilExcel.class)
-    public void testLoginData(String username,String password){
-        System.out.println("UserName - "+ username);
-        System.out.println("Password - "+ password);
+    public void testLoginData(String username, String password) {
+        System.out.println("UserName - " + username);
+        System.out.println("Password - " + password);
         // Rest Assured code
+        //From excel util
     }
-}
 
+}

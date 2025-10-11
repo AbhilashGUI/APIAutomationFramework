@@ -18,7 +18,7 @@ public class UtilExcel {
     // File Input - the File
     static Workbook book;
     static Sheet sheet;
-    public static String SHEET_NAME = System.getProperty("user.dir")+"/src/main/java/com/thetestingacademy/resources/TDATB4X.xlsx";
+    public static String SHEET_NAME = System.getProperty("user.dir")+"src/main/java/Resources/TestData.xlsx";
 
 
     public static Object[][] getTestDataFromExcel(String sheetName) throws IOException {

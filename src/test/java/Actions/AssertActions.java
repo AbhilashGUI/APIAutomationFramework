@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 public class AssertActions {
     public void verifyStatusCode(Response response) {
-        assertEquals(String.valueOf(response.getStatusCode()).startsWith("20"), true,
+        assertEquals(String.valueOf(response.getStatusCode()).startsWith("200"), true,
                 "value of status code is" + response.getStatusCode());
     }
 

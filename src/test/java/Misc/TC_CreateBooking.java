@@ -13,10 +13,8 @@ import io.qameta.allure.SeverityLevel;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class TC_Createbooking {
 
     public class TC_CreateBooking extends BaseTest {
 
@@ -32,14 +30,13 @@ public class TC_Createbooking {
             payloadManager = new PayloadManager();
             actions = new AssertActions();
             requestSpecification = RestAssured.given()
-                    .baseUri(APIConstants.BASE_URL)
+                    .basePath(APIConstants.CREATE_BOOKING)
                     .contentType(ContentType.JSON).log().all();
-            requestSpecification.basePath(APIConstants.CREATE_BOOKING);
             response = requestSpecification.when().body(payloadManager.createPayload()).post();
             validatableResponse = response.then().log().all();
             validatableResponse.statusCode(200);
-            BookingResponse bookingRespons = payloadManager.JsonToObject(response.asString());
-            assertThat(bookingRespons.getBookingid().toString()).isNotEmpty().isNotNull();
+            BookingResponse bookingResponse = payloadManager.JsonToObject(response.asString());
+            assertThat(bookingResponse.getBookingid().toString()).isNotEmpty().isNotNull();
         }
 
         @Test(groups = {"stage","P0"})
@@ -48,20 +45,13 @@ public class TC_Createbooking {
             payloadManager = new PayloadManager();
             actions = new AssertActions();
             requestSpecification = RestAssured.given()
-                    .baseUri(APIConstants.BASE_URL)
+                    .basePath(APIConstants.CREATE_BOOKING)
                     .contentType(ContentType.JSON).log().all();
-            requestSpecification.basePath(APIConstants.CREATE_BOOKING);
             response = requestSpecification.when().body("").post();
             validatableResponse = response.then().log().all();
             validatableResponse.statusCode(500);
-            //new YAMLReader().readKey().get("username");
-            //new ProeprReader().readKey().get("username");
-            //new ExcelReader().readKey().get("username");
-            //new JSONReader().readKey().get("username");
-            //new TETXReader().readKey().get("username");
-            //new ENVReader().readKey().get("username");
-            //new XMLReader.readKey().get("username");
+
         }
 
     }
-}
+

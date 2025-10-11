@@ -11,9 +11,6 @@ import io.restassured.response.ValidatableResponse;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 import org.apache.logging.log4j.LogManager;
-
-
-import static Base.BaseTest.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
@@ -61,33 +58,33 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
         //Update the Booking with Token and Booking ID
         @Test(groups = "P0", dependsOnMethods = {"testCreateBooking"})
-        public void testCreateAndUpdateBooking() throws JsonProcessingException {
+        public void testUpdateBooking() throws JsonProcessingException {
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId);
             response = RestAssured.given().spec(requestSpecification).cookie("token",token)
                     .when().body(payloadManager.updatedPayload()).put();
             validatableResponse = response.then().log().all();
             //validatableResponse.body("firstname", Matchers.is("Lucky"));
 
-            Booking bookingRespons = payloadManager.JsonToObjectPUT(response.asString());
-            assertThat(bookingRespons.getFirstname()).isEqualTo("Lucky").isNotNull();
-            assertThat(bookingRespons.getLastname()).isNotNull();
-            assertThat(bookingRespons.getDepositpaid()).isNotNull();
-            assertThat(bookingRespons.getBookingdates().getCheckin()).isNotNull();
-            assertThat(bookingRespons.getBookingdates().getCheckout()).isNotEmpty();
+            Booking bookingResponse = payloadManager.JsonToObjectPUT(response.asString());
+            assertThat(bookingResponse.getFirstname()).isEqualTo("Lucky").isNotNull();
+            assertThat(bookingResponse.getLastname()).isNotNull();
+            assertThat(bookingResponse.getDepositpaid()).isNotNull();
+            assertThat(bookingResponse.getBookingdates().getCheckin()).isNotNull();
+            assertThat(bookingResponse.getBookingdates().getCheckout()).isNotEmpty();
 
         }
 
         // Delete Also
-        @Test(groups = "P0",dependsOnMethods = { "testCreateAndUpdateBooking"})
-        public void testDeleteCreatedBooking(){
+        @Test(groups = "P0",dependsOnMethods = { "testUpdateBooking"})
+        public void testDelete_CreatedBooking(){
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId).cookie("token",token);
             ValidatableResponse validatableResponse = RestAssured.given().spec(requestSpecification).auth().basic("admin", "password123")
                     .when().delete().then().log().all();
             validatableResponse.statusCode(201);
         }
 
-        @Test(groups = "P0",dependsOnMethods = { "testDeleteCreatedBooking"})
-        public void testDeleteBookingByGet(){
+        @Test(groups = "P0",dependsOnMethods = { "testDelete_CreatedBooking"})
+        public void testDeleteBooking_ByGet(){
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING+"/"+bookingId);
             response = RestAssured.given().spec(requestSpecification)
                     .when().get();

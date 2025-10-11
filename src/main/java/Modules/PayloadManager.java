@@ -6,16 +6,11 @@ import Payloads.BookingResponse;
 import Payloads.Bookingdates;
 import Utils.FakerUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class PayloadManager {
 
-        // JAVA -> JSON to that when give it to the .body()?
-
-        // Jr QA - All the payload we will keep it here
 
 
         ObjectMapper objectMapper;
@@ -24,7 +19,7 @@ public class PayloadManager {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
             booking.setFirstname(FakerUtil.getUserName());
-            booking.setLastname("Dutta");
+            booking.setLastname("Vignesh");
             booking.setTotalprice(123);
             booking.setDepositpaid(true);
             booking.setAdditionalneeds("BreakFast");
@@ -43,9 +38,9 @@ public class PayloadManager {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
             booking.setFirstname(FakerUtil.getUserName());
-            booking.setLastname("Dutta");
+            booking.setLastname("Charan");
             booking.setTotalprice(123);
-            booking.setDepositpaid(true);
+            booking.setDepositpaid(false);
             booking.setAdditionalneeds("BreakFast");
 
             Bookingdates bookingdates = new Bookingdates();
@@ -89,8 +84,8 @@ public class PayloadManager {
         public String updatedPayloadPatch() throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
-            booking.setFirstname("Lucky");
-            booking.setLastname("Dutta");
+            booking.setFirstname("Abhilash");
+            booking.setLastname("Vemula");
             booking.setTotalprice(199);
             booking.setDepositpaid(true);
             booking.setAdditionalneeds("Breakfast, lunch");
@@ -102,9 +97,9 @@ public class PayloadManager {
             return payload;
         }
 
-        public String updatePayload(){
+        /***public String updatePayload(){
             return null;
-        };
+        };***/
 
 
         public String setToken() throws JsonProcessingException {

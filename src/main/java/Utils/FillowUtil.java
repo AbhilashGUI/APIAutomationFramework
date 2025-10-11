@@ -13,7 +13,7 @@ public class FillowUtil {
         String value = null;
         Fillo fillo = new Fillo();
         Connection connection =  fillo.getConnection(FILEPATH);
-        String query = "Select * from " + sheetName + " " + "where ID='" + id + "'";
+        String query = "Select * from " + sheetName + " " + "where ID= " + id + " ";
 
         Recordset recordset = connection.executeQuery(query);
         while(recordset.next()){

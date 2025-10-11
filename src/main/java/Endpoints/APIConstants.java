@@ -17,13 +17,15 @@ public class APIConstants {
             }
         }
 
-        //    public static String BASE_URL;
+          //public static String BASE_URL;
+
         public static String CREATE_BOOKING;
         public static String UPDATE_BOOKING;
 
         static {
             try {
-//            BASE_URL = PropertyReaderUtil.readyKey("url");
+          //BASE_URL = PropertyReaderUtil.readyKey("url");
+
                 CREATE_BOOKING = PropertyReaderUtil.readyKey("CREATE_BOOKING");
                 UPDATE_BOOKING = PropertyReaderUtil.readyKey("UPDATE_BOOKING");
             } catch (Exception e) {

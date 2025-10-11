@@ -10,7 +10,7 @@ public class YAMLReader {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream("com/thetestingacademy/resources/TestDataYAML.yaml");
+                .getResourceAsStream("src/main/java/Resources/TestData.xlsx");
         Map<String, Object> obj = yaml.load(inputStream);
         return obj;
     }

@@ -11,16 +11,19 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BaseTest {
 
-    public static RequestSpecification requestSpecification = RestAssured.given();
+    public static RequestSpecification requestSpecification;
+    public static Response response;
+    public static ValidatableResponse validatableResponse;
     public static AssertActions actions;
     public static PayloadManager payloadManager;
     public static JsonPath jsonPath;
-    public static Response response;
-
-    public static ValidatableResponse validatableResponse;
 
 
     @BeforeMethod(alwaysRun = true)
