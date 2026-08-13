@@ -15,7 +15,7 @@ public class PayloadManager {
 
         ObjectMapper objectMapper;
 
-        public String createPayload() throws JsonProcessingException {
+        public String CreateBookingPayload() throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
             booking.setFirstname(FakerUtil.getUserName());
@@ -34,7 +34,7 @@ public class PayloadManager {
 
         }
 
-        public String createPayloadnegative() throws JsonProcessingException {
+        public String CreateNegativeBookingPayload() throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
             booking.setFirstname(FakerUtil.getUserName());
@@ -53,19 +53,19 @@ public class PayloadManager {
 
         }
 
-        public BookingResponse JsonToObject(String jsonString) throws JsonProcessingException {
+        public BookingResponse JsonToBookingResponse(String jsonString) throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             BookingResponse bookingResponse = objectMapper.readValue(jsonString, BookingResponse.class);
             return bookingResponse;
         }
 
-        public Booking JsonToObjectPUT(String jsonString) throws JsonProcessingException {
+        public Booking JsonToBooking(String jsonString) throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Booking bookingResponse = objectMapper.readValue(jsonString, Booking.class);
             return bookingResponse;
         }
 
-        public String updatedPayload() throws JsonProcessingException {
+        public String CreateUpdatedBookingPayload() throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
             booking.setFirstname("Lucky");
@@ -81,7 +81,7 @@ public class PayloadManager {
             return payload;
         }
 
-        public String updatedPayloadPatch() throws JsonProcessingException {
+        public String CreatePatchpayload() throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Booking booking = new Booking();
             booking.setFirstname("Abhilash");
@@ -99,10 +99,10 @@ public class PayloadManager {
 
         /***public String updatePayload(){
             return null;
-        };***/
+        }***/
 
 
-        public String setToken() throws JsonProcessingException {
+        public String CreateAuthpayload() throws JsonProcessingException {
             objectMapper = new ObjectMapper();
             Auth auth = new Auth();
             auth.setUsername("admin");

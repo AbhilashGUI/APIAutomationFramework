@@ -1,14 +1,20 @@
 package Payloads;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "bookingid",
+        "booking"
+})
 public class BookingResponse {
-    @SerializedName("bookingid")
-    @Expose
+
+    @JsonProperty("bookingid")
     private Integer bookingid;
-    @SerializedName("booking")
-    @Expose
+
+    @JsonProperty("booking")
     private Booking booking;
 
     public Integer getBookingid() {
@@ -26,6 +32,4 @@ public class BookingResponse {
     public void setBooking(Booking booking) {
         this.booking = booking;
     }
-
 }
-

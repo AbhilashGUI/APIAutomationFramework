@@ -15,7 +15,7 @@ public class Booking {
             "additionalneeds"
     })
 
-
+   //Booking request/booking data
 
     @JsonProperty("firstname")
     private String firstname;

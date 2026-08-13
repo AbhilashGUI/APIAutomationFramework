@@ -7,6 +7,8 @@ import com.codoid.products.exception.FilloException;
 public class APIConstants {
 
 
+    //Central configuration
+
         public static String BASE_URL;
 
         static {

@@ -6,7 +6,7 @@ public class Auth {
 
     public Auth() {
     }
-
+//Authentication request
     public String getUsername() {
         return username;
     }

@@ -12,6 +12,7 @@ import java.util.Map;
         "checkout"
 })
 
+//This is a nested class inside the booking representing check-in and check-out dates
 public class Bookingdates {
 
 @JsonProperty("checkin")
