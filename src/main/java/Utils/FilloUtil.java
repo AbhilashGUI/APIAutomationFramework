@@ -5,8 +5,8 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
-public class FillowUtil {
-    public static String FILEPATH = System.getProperty("user.dir")+"src/main/java/Resources/TD.xlsx";
+public class FilloUtil {
+    public static String FILEPATH = System.getProperty("user.dir")+"/src/main/java/Resources/TD.xlsx";
 
 
     public static String fetchDataFromXLSX(String sheetName,String id, String fieldName) throws FilloException {

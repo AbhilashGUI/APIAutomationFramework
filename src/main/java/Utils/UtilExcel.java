@@ -12,20 +12,21 @@ import java.io.IOException;
 public class UtilExcel {
 
     // File Input - the File
-    // Get the Data into a Object[][]
+    // Get the Data into an Object[][]
+    // DDT using Apache POI
 
 
     // File Input - the File
     static Workbook book;
     static Sheet sheet;
-    public static String SHEET_NAME = System.getProperty("user.dir")+"src/main/java/Resources/TestData.xlsx";
+    public static String File_path = System.getProperty("user.dir")+"/src/main/java/Resources/TestData.xlsx";
 
 
     public static Object[][] getTestDataFromExcel(String sheetName) throws IOException {
 
         FileInputStream file = null;
         try {
-            file = new FileInputStream(SHEET_NAME);
+            file = new FileInputStream(File_path);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

@@ -1,6 +1,6 @@
 package Endpoints;
 
-import Utils.FillowUtil;
+import Utils.FilloUtil;
 import Utils.PropertyReaderUtil;
 import com.codoid.products.exception.FilloException;
 
@@ -13,7 +13,7 @@ public class APIConstants {
 
         static {
             try {
-                BASE_URL = FillowUtil.fetchDataFromXLSX("Sheet1","baseurl","Value");
+                BASE_URL = FilloUtil.fetchDataFromXLSX("Sheet1","baseurl","Value");
             } catch (FilloException e) {
                 e.printStackTrace();
             }
@@ -28,8 +28,8 @@ public class APIConstants {
             try {
           //BASE_URL = PropertyReaderUtil.readyKey("url");
 
-                CREATE_BOOKING = PropertyReaderUtil.readyKey("CREATE_BOOKING");
-                UPDATE_BOOKING = PropertyReaderUtil.readyKey("UPDATE_BOOKING");
+                CREATE_BOOKING = PropertyReaderUtil.readKey("CREATE_BOOKING");
+                UPDATE_BOOKING = PropertyReaderUtil.readKey("UPDATE_BOOKING");
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

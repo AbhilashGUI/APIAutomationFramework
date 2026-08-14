@@ -5,13 +5,11 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class PropertyReaderUtil {
-    public PropertyReaderUtil() {
-    }
 
 
-    public static String readyKey(String key) throws Exception {
+    public static String readKey(String key) throws Exception {
         System.out.println(System.getProperty("user.dir"));
-        FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"src/main/java/Resources/TDP.properties"));
+        FileInputStream fileInputStream = new FileInputStream(new File(System.getProperty("user.dir")+"/src/main/java/Resources/TDP.properties"));
         Properties p = new Properties();
         p.load(fileInputStream);
 
