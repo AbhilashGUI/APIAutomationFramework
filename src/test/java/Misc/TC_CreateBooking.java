@@ -32,10 +32,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
             requestSpecification = RestAssured.given()
                     .basePath(APIConstants.CREATE_BOOKING)
                     .contentType(ContentType.JSON).log().all();
-            response = requestSpecification.when().body(payloadManager.createPayload()).post();
+            response = requestSpecification.when().body(payloadManager.CreateBookingPayload()).post();
             validatableResponse = response.then().log().all();
             validatableResponse.statusCode(200);
-            BookingResponse bookingResponse = payloadManager.JsonToObject(response.asString());
+            BookingResponse bookingResponse = payloadManager.JsonToBookingResponse(response.asString());
             assertThat(bookingResponse.getBookingid().toString()).isNotEmpty().isNotNull();
         }
 

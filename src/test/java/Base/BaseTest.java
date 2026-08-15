@@ -11,10 +11,6 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class BaseTest {
 
@@ -49,7 +45,7 @@ public class BaseTest {
     public String getToken() throws JsonProcessingException {
 
         requestSpecification = RestAssured.given().baseUri(APIConstants.BASE_URL).basePath("/auth");
-        String payload = payloadManager.setToken();
+        String payload = payloadManager.CreateAuthpayload();
         response = requestSpecification.contentType(ContentType.JSON)
                 .body(payload)
                 .when().post();

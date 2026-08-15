@@ -7,7 +7,6 @@ import Payloads.BookingResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.ValidatableResponse;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         String bookingIdPojo;
 
         // Create a Booking
-        // Update the Booking with Token and Booking ID - How to pass the variales from one test to another.
+        // Update the Booking with Token and Booking ID - How to pass the variables from one test to another.
         // 1. Auth - API Key
         // Cookie Based Auth Side.
         // OAuth 2.0 - Method how you can use the OAuth 2.0
@@ -41,14 +40,14 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
             requestSpecification.basePath(APIConstants.CREATE_BOOKING);
             response = RestAssured.given().spec(requestSpecification)
-                    .when().body(payloadManager.createPayload()).post();
+                    .when().body(payloadManager.CreateBookingPayload()).post();
             validatableResponse = response.then().log().all();
             jsonPath = JsonPath.from(response.asString());
             validatableResponse.statusCode(200);
             // Direct Extraction from json Path
             bookingId = jsonPath.getString("bookingid");
             // Booking Response Class
-            BookingResponse bookingResponse = payloadManager.JsonToObject(response.asString());
+            BookingResponse bookingResponse = payloadManager.JsonToBookingResponse(response.asString());
             bookingIdPojo = bookingResponse.getBookingid().toString();
             log.info("This is My Booking ID"+bookingIdPojo);
             assertThat(bookingId).isNotNull().isNotEmpty();
@@ -61,11 +60,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         public void testUpdateBooking() throws JsonProcessingException {
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId);
             response = RestAssured.given().spec(requestSpecification).cookie("token",token)
-                    .when().body(payloadManager.updatedPayload()).put();
+                    .when().body(payloadManager.CreateUpdatedBookingPayload()).put();
             validatableResponse = response.then().log().all();
             //validatableResponse.body("firstname", Matchers.is("Lucky"));
 
-            Booking bookingResponse = payloadManager.JsonToObjectPUT(response.asString());
+            Booking bookingResponse = payloadManager.JsonToBooking(response.asString());
             assertThat(bookingResponse.getFirstname()).isEqualTo("Lucky").isNotNull();
             assertThat(bookingResponse.getLastname()).isNotNull();
             assertThat(bookingResponse.getDepositpaid()).isNotNull();
@@ -78,7 +77,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         @Test(groups = "P0",dependsOnMethods = { "testUpdateBooking"})
         public void testDelete_CreatedBooking(){
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId).cookie("token",token);
-            ValidatableResponse validatableResponse = RestAssured.given().spec(requestSpecification).auth().basic("admin", "password123")
+            validatableResponse = RestAssured.given().spec(requestSpecification).auth().basic("admin", "password123")
                     .when().delete().then().log().all();
             validatableResponse.statusCode(201);
         }

@@ -5,6 +5,10 @@ import io.restassured.response.Response;
 import static org.testng.Assert.assertEquals;
 
 public class AssertActions {
+
+    //This is an important Java concept called method overloading.
+    //Java decides which implementation to use.
+    //This is compile-time polymorphism.
     public void verifyStatusCode(Response response) {
         assertEquals(String.valueOf(response.getStatusCode()).startsWith("200"), true,
                 "value of status code is" + response.getStatusCode());
