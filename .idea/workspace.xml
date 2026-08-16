@@ -7,12 +7,18 @@
     <list default="true" id="d666a5f9-d4d1-413a-9e07-61c760fcd397" name="Changes" comment="Framework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Endpoints/APIConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Endpoints/APIConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modules/PayloadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modules/PayloadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payloads/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payloads/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payloads/BookingResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payloads/BookingResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Payloads/Bookingdates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Payloads/Bookingdates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/TD.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/TD.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Resources/TDP.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/TDP.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/FakerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/FakerUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/FillowUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/FilloUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/TestData.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Resources/TestData.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/FilloUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/FilloUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/PropertyReaderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/PropertyReaderUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/UtilExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/UtilExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/YAMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/YAMLReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CRUD/TC_Integration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CRUD/TC_Integration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Misc/TC_CreateBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Misc/TC_CreateBooking.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,36 +46,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.APIAutomationFramework [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;TestNG.LoginwithDDT.testLoginData.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TC_CREATE_BOOKING.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TC_CreateBooking.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TC_Integration.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Abhilash Sharma/IdeaProjects/APIAutomationFramework/src/main/java/Resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.APIAutomationFramework [clean].executor": "Run",
+    "Maven.APIAutomationFramework [compile].executor": "Run",
+    "Maven.APIAutomationFramework [deploy].executor": "Run",
+    "Maven.APIAutomationFramework [install].executor": "Run",
+    "Maven.APIAutomationFramework [package].executor": "Run",
+    "Maven.APIAutomationFramework [site].executor": "Run",
+    "Maven.APIAutomationFramework [test].executor": "Run",
+    "Maven.APIAutomationFramework [validate].executor": "Run",
+    "Maven.APIAutomationFramework [verify].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "TestNG.LoginwithDDT.testLoginData.executor": "Run",
+    "TestNG.TC_CREATE_BOOKING.executor": "Run",
+    "TestNG.TC_CreateBooking.executor": "Run",
+    "TestNG.TC_Integration.executor": "Run",
+    "TestNG.TC_Integration.testCreateBooking.executor": "Run",
+    "TestNG.TC_Integration.testDeleteBooking_ByGet.executor": "Run",
+    "TestNG.TC_Integration.testDeleteCreatedBooking.executor": "Run",
+    "TestNG.TC_Integration.testUpdateBooking.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Abhilash Sharma/IdeaProjects/APIAutomationFramework/src/main/java/Resources",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Abhilash Sharma\IdeaProjects\APIAutomationFramework\src\main\java\Resources" />
@@ -78,7 +89,7 @@
       <recent name="C:\Users\Abhilash Sharma\IdeaProjects\APIAutomationFramework\src\main\java\Resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TC_Integration">
+  <component name="RunManager" selected="TestNG.TC_CreateBooking">
     <configuration name="LoginwithDDT.testLoginData" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="APIAutomationFramework" />
       <extension name="coverage">
@@ -91,23 +102,6 @@
       <option name="MAIN_CLASS_NAME" value="DDT.LoginwithDDT" />
       <option name="METHOD_NAME" value="testLoginData" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TC_CREATE_BOOKING" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="APIAutomationFramework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Misc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Misc" />
-      <option name="MAIN_CLASS_NAME" value="Misc.TC_CREATE_BOOKING" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -148,12 +142,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TC_Integration.testDeleteBooking_ByGet" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="APIAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CRUD.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CRUD" />
+      <option name="MAIN_CLASS_NAME" value="CRUD.TC_Integration" />
+      <option name="METHOD_NAME" value="testDeleteBooking_ByGet" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TC_Integration.testDeleteCreatedBooking" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="APIAutomationFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CRUD.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CRUD" />
+      <option name="MAIN_CLASS_NAME" value="CRUD.TC_Integration" />
+      <option name="METHOD_NAME" value="testDeleteCreatedBooking" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TC_Integration" />
-        <item itemvalue="TestNG.LoginwithDDT.testLoginData" />
         <item itemvalue="TestNG.TC_CreateBooking" />
-        <item itemvalue="TestNG.TC_CREATE_BOOKING" />
+        <item itemvalue="TestNG.LoginwithDDT.testLoginData" />
+        <item itemvalue="TestNG.TC_Integration" />
+        <item itemvalue="TestNG.TC_Integration.testDeleteBooking_ByGet" />
+        <item itemvalue="TestNG.TC_Integration.testDeleteCreatedBooking" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +237,23 @@
       <option name="project" value="LOCAL" />
       <updated>1786636739692</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Framework">
+      <option name="closed" value="true" />
+      <created>1786714611318</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1786714611318</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Framework">
+      <option name="closed" value="true" />
+      <created>1786769457867</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1786769457867</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,13 +276,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/CRUD/TC_Integration.java</url>
-          <line>32</line>
+          <line>31</line>
           <properties field="log" class="CRUD.TC_Integration" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/Actions/AssertActions.java</url>
-          <line>7</line>
+          <line>11</line>
           <properties class="Actions.AssertActions" method="verifyStatusCode">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

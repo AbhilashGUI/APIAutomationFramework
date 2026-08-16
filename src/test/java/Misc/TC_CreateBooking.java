@@ -11,7 +11,6 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -29,10 +28,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
             // Call the Assertion Block
             payloadManager = new PayloadManager();
             actions = new AssertActions();
-            requestSpecification = RestAssured.given()
-                    .basePath(APIConstants.CREATE_BOOKING)
-                    .contentType(ContentType.JSON).log().all();
-            response = requestSpecification.when().body(payloadManager.CreateBookingPayload()).post();
+            requestSpecification.basePath(APIConstants.CREATE_BOOKING);
+            response = RestAssured.given().spec(requestSpecification)
+                    .when().body(payloadManager.createBookingPayload()).post();
             validatableResponse = response.then().log().all();
             validatableResponse.statusCode(200);
             BookingResponse bookingResponse = payloadManager.JsonToBookingResponse(response.asString());
@@ -44,10 +42,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         public void testCreateBooking2_Negative() throws JsonProcessingException {
             payloadManager = new PayloadManager();
             actions = new AssertActions();
-            requestSpecification = RestAssured.given()
-                    .basePath(APIConstants.CREATE_BOOKING)
-                    .contentType(ContentType.JSON).log().all();
-            response = requestSpecification.when().body("").post();
+            requestSpecification.basePath(APIConstants.CREATE_BOOKING);
+            response = RestAssured.given().spec(requestSpecification)
+                    .when().body("").post();
             validatableResponse = response.then().log().all();
             validatableResponse.statusCode(500);
 

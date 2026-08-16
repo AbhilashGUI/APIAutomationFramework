@@ -45,7 +45,7 @@ public class BaseTest {
     public String getToken() throws JsonProcessingException {
 
         requestSpecification = RestAssured.given().baseUri(APIConstants.BASE_URL).basePath("/auth");
-        String payload = payloadManager.CreateAuthpayload();
+        String payload = payloadManager.createAuthpayload();
         response = requestSpecification.contentType(ContentType.JSON)
                 .body(payload)
                 .when().post();

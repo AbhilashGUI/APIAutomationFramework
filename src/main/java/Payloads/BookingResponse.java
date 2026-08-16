@@ -11,10 +11,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 public class BookingResponse {
 
-    @JsonProperty("bookingid")
     private Integer bookingid;
-
-    @JsonProperty("booking")
     private Booking booking;
 
     public Integer getBookingid() {

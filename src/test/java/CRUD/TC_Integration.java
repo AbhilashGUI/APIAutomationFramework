@@ -16,7 +16,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
     public class TC_Integration extends BaseTest {
         String token;
         String bookingId;
-        String bookingIdPojo;
+        String bookingIdFromPojo;
 
         // Create a Booking
         // Update the Booking with Token and Booking ID - How to pass the variables from one test to another.
@@ -40,7 +40,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
             requestSpecification.basePath(APIConstants.CREATE_BOOKING);
             response = RestAssured.given().spec(requestSpecification)
-                    .when().body(payloadManager.CreateBookingPayload()).post();
+                    .when().body(payloadManager.createBookingPayload()).post();
             validatableResponse = response.then().log().all();
             jsonPath = JsonPath.from(response.asString());
             validatableResponse.statusCode(200);
@@ -48,8 +48,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
             bookingId = jsonPath.getString("bookingid");
             // Booking Response Class
             BookingResponse bookingResponse = payloadManager.JsonToBookingResponse(response.asString());
-            bookingIdPojo = bookingResponse.getBookingid().toString();
-            log.info("This is My Booking ID"+bookingIdPojo);
+            bookingIdFromPojo = bookingResponse.getBookingid().toString();
+            log.info("This is My Booking ID"+bookingIdFromPojo);
             assertThat(bookingId).isNotNull().isNotEmpty();
 
         }
@@ -60,7 +60,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         public void testUpdateBooking() throws JsonProcessingException {
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId);
             response = RestAssured.given().spec(requestSpecification).cookie("token",token)
-                    .when().body(payloadManager.CreateUpdatedBookingPayload()).put();
+                    .when().body(payloadManager.createUpdatedBookingPayload()).put();
             validatableResponse = response.then().log().all();
             //validatableResponse.body("firstname", Matchers.is("Lucky"));
 
@@ -74,15 +74,15 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
         }
 
         // Delete Also
-        @Test(groups = "P0",dependsOnMethods = { "testUpdateBooking"})
-        public void testDelete_CreatedBooking(){
+        @Test(groups = "P0",dependsOnMethods = {"testUpdateBooking"})
+        public void testDeleteCreatedBooking(){
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING + "/" + bookingId).cookie("token",token);
-            validatableResponse = RestAssured.given().spec(requestSpecification).auth().basic("admin", "password123")
+            validatableResponse = RestAssured.given().spec(requestSpecification)
                     .when().delete().then().log().all();
             validatableResponse.statusCode(201);
         }
 
-        @Test(groups = "P0",dependsOnMethods = { "testDelete_CreatedBooking"})
+        @Test(groups = "P0",dependsOnMethods = {"testDeleteCreatedBooking"})
         public void testDeleteBooking_ByGet(){
             requestSpecification.basePath(APIConstants.UPDATE_BOOKING+"/"+bookingId);
             response = RestAssured.given().spec(requestSpecification)

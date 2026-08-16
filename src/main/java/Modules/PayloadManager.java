@@ -13,10 +13,9 @@ public class PayloadManager {
 
 
 
-        ObjectMapper objectMapper;
+        private final ObjectMapper objectMapper= new ObjectMapper();
 
-        public String CreateBookingPayload() throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
+        public String createBookingPayload() throws JsonProcessingException {
             Booking booking = new Booking();
             booking.setFirstname(FakerUtil.getUserName());
             booking.setLastname("Vignesh");
@@ -34,11 +33,10 @@ public class PayloadManager {
 
         }
 
-        public String CreateNegativeBookingPayload() throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
+        public String createNegativeBookingPayload() throws JsonProcessingException {
             Booking booking = new Booking();
             booking.setFirstname(FakerUtil.getUserName());
-            booking.setLastname("Charan");
+            booking.setLastname("");
             booking.setTotalprice(123);
             booking.setDepositpaid(false);
             booking.setAdditionalneeds("BreakFast");
@@ -54,19 +52,19 @@ public class PayloadManager {
         }
 
         public BookingResponse JsonToBookingResponse(String jsonString) throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
+
             BookingResponse bookingResponse = objectMapper.readValue(jsonString, BookingResponse.class);
             return bookingResponse;
         }
 
         public Booking JsonToBooking(String jsonString) throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
+
             Booking bookingResponse = objectMapper.readValue(jsonString, Booking.class);
             return bookingResponse;
         }
 
-        public String CreateUpdatedBookingPayload() throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
+        public String createUpdatedBookingPayload() throws JsonProcessingException {
+
             Booking booking = new Booking();
             booking.setFirstname("Lucky");
             booking.setLastname("Dutta");
@@ -81,19 +79,12 @@ public class PayloadManager {
             return payload;
         }
 
-        public String CreatePatchpayload() throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
-            Booking booking = new Booking();
-            booking.setFirstname("Abhilash");
-            booking.setLastname("Vemula");
-            booking.setTotalprice(199);
-            booking.setDepositpaid(true);
-            booking.setAdditionalneeds("Breakfast, lunch");
-            Bookingdates bookingdates = new Bookingdates();
-            bookingdates.setCheckin("2022-10-01");
-            bookingdates.setCheckout("2022-10-01");
-            booking.setBookingdates(bookingdates);
-            String payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(booking);
+        public String createPatchpayload() throws JsonProcessingException {
+
+            Booking patchbooking = new Booking();
+            patchbooking.setFirstname("Abhilash");
+
+            String payload = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(patchbooking);
             return payload;
         }
 
@@ -102,8 +93,7 @@ public class PayloadManager {
         }***/
 
 
-        public String CreateAuthpayload() throws JsonProcessingException {
-            objectMapper = new ObjectMapper();
+        public String createAuthpayload() throws JsonProcessingException {
             Auth auth = new Auth();
             auth.setUsername("admin");
             auth.setPassword("password123");

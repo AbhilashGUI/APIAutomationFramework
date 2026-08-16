@@ -15,9 +15,8 @@ import java.util.Map;
 //This is a nested class inside the booking representing check-in and check-out dates
 public class Bookingdates {
 
-@JsonProperty("checkin")
+
 private String checkin;
-@JsonProperty("checkout")
 private String checkout;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
@@ -40,16 +39,6 @@ public String getCheckout() {
 @JsonProperty("checkout")
 public void setCheckout(String checkout) {
     this.checkout = checkout;
-}
-
-@JsonAnyGetter
-public Map<String, Object> getAdditionalProperties() {
-    return this.additionalProperties;
-}
-
-@JsonAnySetter
-public void setAdditionalProperty(String name, Object value) {
-    this.additionalProperties.put(name, value);
 }
 
 }

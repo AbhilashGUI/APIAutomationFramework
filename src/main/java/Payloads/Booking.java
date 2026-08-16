@@ -17,17 +17,12 @@ public class Booking {
 
    //Booking request/booking data
 
-    @JsonProperty("firstname")
+
     private String firstname;
-    @JsonProperty("lastname")
     private String lastname;
-    @JsonProperty("totalprice")
     private Integer totalprice;
-    @JsonProperty("depositpaid")
     private Boolean depositpaid;
-    @JsonProperty("bookingdates")
     private Bookingdates bookingdates;
-    @JsonProperty("additionalneeds")
     private String additionalneeds;
 
     @JsonProperty("firstname")
